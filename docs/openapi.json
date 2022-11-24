@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "My REST Api 2",
+    "title": "Sample Apex REST Api",
     "version": "1.0.0"
   },
   "servers": [

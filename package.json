@@ -1,0 +1,10 @@
+{
+  "name": "redoc-playground",
+  "version": "1.0.0",
+  "scripts": {
+    "execute:example:openapi": "apexdocs-generate -s ./src -t docs protected -g openapi --openApiTitle \"Sample Apex REST Api\""
+  },
+  "devDependencies": {
+    "@cparra/apexdocs": "2.9.0-alpha.0"
+  }
+}
