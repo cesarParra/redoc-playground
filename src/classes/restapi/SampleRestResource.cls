@@ -35,7 +35,7 @@ global with sharing class SampleRestResource {
     }
 
     /**
-     * @description This is a sample HTTP Get method
+     * @description Gets accounts
      * @return An Account SObject.
      * @http-parameter
      * name: limit
