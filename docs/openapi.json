@@ -11,7 +11,7 @@
   ],
   "paths": {
     "/Account/*": {
-      "description": "Account related operations.",
+      "description": "Account related operations (sample change)",
       "get": {
         "description": "This is a sample HTTP Get method",
         "parameters": [
