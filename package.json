@@ -2,6 +2,7 @@
   "name": "redoc-playground",
   "version": "1.0.0",
   "scripts": {
+    "docs:serve": "http-server -c-1",
     "execute:example:openapi": "apexdocs-generate -s ./src -t docs protected -g openapi --openApiTitle \"Sample Apex REST Api\""
   },
   "devDependencies": {

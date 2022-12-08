@@ -10,10 +10,102 @@
     }
   ],
   "paths": {
+    "/Orders/*": {
+      "get": {
+        "description": "Quasi sapiente voluptates aut minima non doloribus similique quisquam. In quo expedita ipsum nostrum corrupti incidunt. Et aut eligendi ea perferendis.",
+        "responses": {
+          "200": {
+            "description": "Status code 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "statusMessage": {
+                      "type": "string"
+                    },
+                    "statusCode": {
+                      "type": "string"
+                    },
+                    "metadata": {
+                      "type": "object"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "errorMap": {
+                      "type": "object"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "total": {
+                            "type": "number"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "startDate": {
+                            "type": "string",
+                            "format": "date"
+                          },
+                          "scheduleType": {
+                            "type": "string"
+                          },
+                          "salesOrderStatus": {
+                            "type": "string"
+                          },
+                          "postedDate": {
+                            "type": "string",
+                            "format": "date"
+                          },
+                          "paidDate": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "isOpen": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/OrdersWithReference/*": {
+      "get": {
+        "description": "Order Service but with a reference class rather than inline.",
+        "responses": {
+          "200": {
+            "description": "Status code 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChildClass"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/Account/*": {
       "description": "Account related operations (sample change)",
       "get": {
-        "description": "This is a sample HTTP Get method",
+        "description": "Gets accounts",
         "parameters": [
           {
             "name": "limit",
@@ -312,20 +404,6 @@
   },
   "components": {
     "schemas": {
-      "SampleClass": {
-        "type": "object",
-        "properties": {
-          "MyProp": {
-            "type": "string"
-          },
-          "AnotherProp": {
-            "type": "number"
-          },
-          "someVariable": {
-            "type": "string"
-          }
-        }
-      },
       "ChildClass": {
         "type": "object",
         "properties": {
@@ -342,6 +420,20 @@
             "type": "string"
           },
           "protectedGrandParentField": {
+            "type": "string"
+          }
+        }
+      },
+      "SampleClass": {
+        "type": "object",
+        "properties": {
+          "MyProp": {
+            "type": "string"
+          },
+          "AnotherProp": {
+            "type": "number"
+          },
+          "someVariable": {
             "type": "string"
           }
         }
